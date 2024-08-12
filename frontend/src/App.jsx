@@ -7,7 +7,8 @@ function App() {
 
   return (
     <>
-    <PlayerScreen></PlayerScreen>
+      <h1 className='login-title'>AccuBoxer AI</h1>
+      
     </>
   )
 }
