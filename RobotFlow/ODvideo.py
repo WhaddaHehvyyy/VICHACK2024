@@ -1,12 +1,8 @@
 from inference import InferencePipeline
 from inference.core.interfaces.camera.entities import VideoFrame
-
-# import opencv to display our annotated images
 import cv2
-# import supervision to help visualize our predictions
 import supervision as sv
 
-# create a bounding box annotator and label annotator to use in our custom sink
 label_annotator = sv.LabelAnnotator()
 box_annotator = sv.BoxAnnotator()
 
@@ -32,3 +28,4 @@ pipeline = InferencePipeline.init(
 
 pipeline.start()
 pipeline.join()
+cv2.destroyAllWindows()
