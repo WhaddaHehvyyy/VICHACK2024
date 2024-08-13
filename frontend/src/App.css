@@ -11,13 +11,3 @@ body, html {
 
 }
 
-
-
-
-.login-title {
-    font-weight: 200;
-    padding-bottom: 100px;
-    text-align: center; /* Optional: Center the text within its container */
-    margin-top: 250px;
-    color: white;
-}
