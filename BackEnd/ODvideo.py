@@ -20,7 +20,11 @@ def my_custom_sink(predictions: dict, video_frame: VideoFrame):
     image = box_annotator.annotate(image, detections=detections)
     # display the annotated image
     cv2.imshow("Predictions", image)
-    cv2.waitKey(1)
+
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        pipeline.stop()
+        cv2.destroyAllWindows()
+        return
 
 pipeline = InferencePipeline.init(
     model_id="boxer-detection-n1rbc/3",
@@ -31,5 +35,4 @@ pipeline = InferencePipeline.init(
 
 pipeline.start()
 pipeline.join()
-cv2.waitKey(0)
 cv2.destroyAllWindows()
