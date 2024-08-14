@@ -2,6 +2,8 @@ from inference import InferencePipeline
 from inference.core.interfaces.camera.entities import VideoFrame
 import cv2
 import supervision as sv
+import os
+print(os.path.exists("Boxing1.mp4"))
 
 label_annotator = sv.LabelAnnotator()
 box_annotator = sv.BoxAnnotator()
@@ -22,7 +24,7 @@ def my_custom_sink(predictions: dict, video_frame: VideoFrame):
 
 pipeline = InferencePipeline.init(
     model_id="boxer-detection-n1rbc/3",
-    video_reference="/Users/natha/Desktop/YT2MP$/Boxing1.mp4",
+    video_reference="./Boxing1.mp4",
     on_prediction=my_custom_sink, 
     confidence= 0.60
 )
