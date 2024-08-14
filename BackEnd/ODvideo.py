@@ -5,6 +5,8 @@ import supervision as sv
 import os
 print(os.path.exists("Boxing1.mp4"))
 
+
+
 label_annotator = sv.LabelAnnotator()
 box_annotator = sv.BoxAnnotator()
 
