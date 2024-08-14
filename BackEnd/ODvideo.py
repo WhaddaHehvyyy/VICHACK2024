@@ -24,11 +24,12 @@ def my_custom_sink(predictions: dict, video_frame: VideoFrame):
 
 pipeline = InferencePipeline.init(
     model_id="boxer-detection-n1rbc/3",
-    video_reference="./Boxing1.mp4",
+    video_reference="BackEnd/Boxing1.mp4",
     on_prediction=my_custom_sink, 
     confidence= 0.60
 )
 
 pipeline.start()
 pipeline.join()
+cv2.waitKey(0)
 cv2.destroyAllWindows()
