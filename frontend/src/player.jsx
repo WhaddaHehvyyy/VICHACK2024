@@ -1,7 +1,12 @@
-import ReactPlayer from 'react-player';
 import './player.css'
 import logo from './assets/logo_only.png'
+import { useGlobalState } from './GlobalContext';
+
+
 function PlayerScreen() {
+
+    const { globalState } = useGlobalState();
+
 
     return (
       <>
@@ -18,8 +23,15 @@ function PlayerScreen() {
             </div>
 
             <div className='player-div'>
+                    {globalState ? (
+              <video controls height='70%' width='100%'>
+                <source src={URL.createObjectURL(globalState)} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <p>No video file selected.</p>
+            )}
 
-              <ReactPlayer url="https://www.twitch.tv/dinah" height={"70%"} width={"100%"}  style={{ borderRadius: '10px', overflow: 'hidden' }}/>
               <div className='button-div'>
                 <button className='frame-button'>Show Frames</button>
 
