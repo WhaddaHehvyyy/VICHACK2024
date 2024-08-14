@@ -3,7 +3,6 @@ from inference.core.interfaces.camera.entities import VideoFrame
 import cv2
 import supervision as sv
 
-
 label_annotator = sv.LabelAnnotator()
 box_annotator = sv.BoxAnnotator()
 
