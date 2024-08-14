@@ -23,7 +23,8 @@ def my_custom_sink(predictions: dict, video_frame: VideoFrame):
 pipeline = InferencePipeline.init(
     model_id="boxer-detection-n1rbc/3",
     video_reference="/Users/natha/Desktop/YT2MP$/Boxing1.mp4",
-    on_prediction=my_custom_sink,
+    on_prediction=my_custom_sink, 
+    confidence= 0.60
 )
 
 pipeline.start()
